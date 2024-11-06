@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+    color: #333;
+    background: url(alunoestudando.png) no-repeat center top fixed;
+    background-size: cover;
+    margin-top: 50px;
+    background-position: center -60%;
+}
+
+.logo h1 {
+    color: #f4f4f4;
+}
