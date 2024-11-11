@@ -1,0 +1,54 @@
+CREATE DATABASE skillboost;
+
+USE skillboost;
+
+CREATE TABLE Clientes (
+    cpf_cliente CHAR(11) PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Vendedor (
+    codigo_vendedor INT PRIMARY KEY,
+    cpf_vendedor CHAR(11) UNIQUE,
+    nome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Cursos (
+    id_curso INT PRIMARY KEY,
+    nome_do_curso VARCHAR(100) NOT NULL,
+    codigo_vendedor INT,
+    FOREIGN KEY (codigo_vendedor) REFERENCES Vendedor(codigo_vendedor)
+);
+
+CREATE TABLE Clientes_Cursos (
+    id_cliente CHAR(11),
+    id_curso INT,
+    PRIMARY KEY (id_cliente, id_curso),
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(cpf_cliente),
+    FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso)
+);
+
+
+-- inserts de exemplo
+USE skillboost;
+
+INSERT INTO Clientes (cpf_cliente, nome) VALUES 
+('12345678901', 'Alice Santos'),
+('98765432109', 'Bruno Lima'),
+('45678912345', 'Carla Souza');
+
+INSERT INTO Vendedor (codigo_vendedor, cpf_vendedor, nome) VALUES 
+(1, '11122233344', 'Diego Oliveira'),
+(2, '55566677788', 'Fernanda Almeida');
+
+INSERT INTO Cursos (id_curso, nome_do_curso, codigo_vendedor) VALUES 
+(1, 'Introdução ao SQL', 1),
+(2, 'Desenvolvimento Web com HTML e CSS', 1),
+(3, 'Programação em Python', 2);
+
+INSERT INTO Clientes_Cursos (id_cliente, id_curso) VALUES 
+('12345678901', 1),
+('98765432109', 2),
+('45678912345', 3),
+('12345678901', 3), 
+('98765432109', 1);
