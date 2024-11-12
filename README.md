@@ -1,6 +1,7 @@
 # Skillboost
 
 Skillboost é um projeto integrador desenvolvido no curso de Análise de Sistemas. O projeto visa simular uma plataforma fictícia de venda de cursos online, onde usuários podem explorar e se inscrever em cursos, e vendedores podem cadastrar e gerenciar o conteúdo disponível.
+
 <img src="imgs/logo2.png" alt="Logo do Skillboost" width="160"/>
 
 ## Descrição
