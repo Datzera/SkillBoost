@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Professor</title>
+    <link rel="stylesheet" href="../inicio/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="../inicio/index.html"><img src="../imgs/logo2.png" alt="SkillBoost Logo"></a>
+            <h1>Painel do Professor</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#adicionarCurso">Adicionar Curso</a></li>
+                <li><a href="#listarCursos">Listar Cursos</a></li>
+                <li><a href="#alterarCurso">Alterar Curso</a></li>
+                <li><a href="#excluirCurso">Excluir Curso</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding-top: 100px;"> <!-- NAO TA FUNCIONADNO NO ARQUIVO CSS ENT COLOQUEI AQ MSM -->
+
+        <section id="adicionarCurso" class="conteudo">
+            <h2>Adicionar Novo Curso</h2>
+            <form>
+                <label for="cursoNome">Título do Curso</label>
+                <input type="text" id="cursoNome" required>
+
+                <label for="cursoDescrição">Descrição do Curso</label>
+                <input type="text" id="cursoDescrição" required>
+
+                <label for="cursoPreço">Preço do Curso</label>
+                <input type="number" id="cursoPreço" min="0" step="0.01" required>
+
+                <button type="submit">Adicionar Curso</button>
+            </form>
+        </section>
+        <section id="listarCursos" class="conteudo">
+            <h2>Meus Cursos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título do Curso</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Curso de ???</td>
+                        <td></td>
+                        <td>199,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Curso de ???</td>
+                        <td>aaaaa</td>
+                        <td>199,00</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+
+        <section id="alterarCurso" class="conteudo">
+            <h2>Alterar Curso</h2>
+            <form>
+                <label for="SELECIONARcurso">Selecione o Curso</label>
+                <select id="SELECIONARcurso">
+                    <option>curso de sla oq</option>
+                    <option>curso de fotossintese</option>
+                </select>
+
+                <label for="NovoTitulo">Novo Título</label>
+                <input type="text" id="NovoTitulo" required>
+
+                <label for="NovaDescrição">Nova Descrição</label>
+                <input type="text" id="NovaDescrição" required>
+
+                <label for="NovoPreço">Novo Preço (R$)</label>
+                <input type="number" id="NovoPreço" min="0" step="0.01" required>
+
+                <button type="submit">Alterar Curso</button>
+            </form>
+        </section>
+        <section id="excluirCurso" class="conteudo">
+            <h2>Excluir Curso</h2>
+            <form>
+                <label for="DeleteCurso">Selecione o Curso</label>
+                <select id="DeleteCurso">
+                    <option>Curso de Programação</option>
+                    <option>Curso de Design Gráfico</option>
+                </select>
+
+                <button type="submit">Excluir Curso</button>
+            </form>
+        </section>
+    </main>
+
+
+
+</body>
+
+</html>
+
+<!--A PARTE LISTAR TA FEIA PQ EU N SEI COMO VAI FICAR COM O BD-->
