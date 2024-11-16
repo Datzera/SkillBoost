@@ -69,6 +69,16 @@ nav a {
     text-decoration: none;
 }
 
+.login p {
+    padding: 10px 20px;
+    align-items: center;
+    gap: 10px;
+    background-color: #5aed83;
+    color: black;
+    border-radius: 100px;
+    text-decoration: none;
+}
+
 .fds {
     text-align: center;
     padding: 60px 20px;
@@ -105,16 +115,19 @@ nav a {
 }
 
 .listaCursos {
+    padding: 0px;
     display: flex;
     justify-content: center;
     gap: 20px;
+    align-items: stretch;
 }
 
 .curso1 {
     background-color: #444;
     padding: 20px;
-    border-radius: 8px;
-    width: 200px;
+    border-radius: 30px;
+    width: 250px;
+    min-width: 250px;
     text-align: center;
 }
 
@@ -205,7 +218,30 @@ footer {
     transition: background-color 0.3s;
 }
 
+.logar a {
+    color: black;
+}
+
+.logar p {
+
+    width: 100%;
+    padding: 10px;
+    background-color: #5aed83;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+}
+
 .logar button:hover {
+    background-color: #16a03d;
+}
+
+.logar a:hover {
     background-color: #16a03d;
 }
 
