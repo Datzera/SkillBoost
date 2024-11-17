@@ -24,7 +24,7 @@
         <nav>
             <ul>
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#courses">Cursos</a></li>
+                 <li><a href="listaCursos.jsp?CPFCliente=<%= CPFCliente %>">Cursos</a></li>
             </ul>
         </nav>
 
@@ -37,26 +37,37 @@
     <section id="inicio" class="fds">
         <h2>Domine novas habilidades com SkillBoost!</h2>
         <p>Escolha entre diversos cursos online e invista em seu futuro.</p>
-        <button>Saiba Mais</button>
     </section>
 
     <section id="courses" class="cursos">
         <h2>Cursos Populares</h2>
         <div class="listaCursos">
             <div class="curso1">
-                <h3>Curso de Programação</h3>
+                <h3>Curso de Java</h3>
                 <p>Aprenda a programar do zero com os melhores professores.</p>
-                <button>Saiba Mais</button>
+                <form action="adicionarCarrinho.jsp" method="POST">
+                    <input type="hidden" name="id_curso" value="1">
+                    <input type="hidden" name="cpf_cliente" value="<%= CPFCliente %>">
+                    <button type="submit">Adicionar ao carrinho</button>
+                </form>
             </div>
             <div class="curso1">
-                <h3>Curso de Design Gráfico</h3>
-                <p>Domine ferramentas e técnicas de design.</p>
-                <button>Saiba Mais</button>
+                <h3>Curso de Python</h3>
+                <p>Domine técnicas de para o desenvolvimento em python.</p>
+                <form action="adicionarCarrinho.jsp" method="POST">
+                    <input type="hidden" name="id_curso" value="2">
+                    <input type="hidden" name="cpf_cliente" value="<%= CPFCliente %>">
+                    <button type="submit">Adicionar ao carrinho</button>
+                </form>
             </div>
             <div class="curso1">
-                <h3>Curso de Marketing Digital</h3>
-                <p>Desenvolva habilidades para o mercado digital.</p>
-                <button>Saiba Mais</button>
+                <h3>Curso de React</h3>
+                <p>Desenvolva habilidades para o desenvolvimento web com react.</p>
+                <form action="adicionarCarrinho.jsp" method="POST">
+                    <input type="hidden" name="id_curso" value="3">
+                    <input type="hidden" name="cpf_cliente" value="<%= CPFCliente %>">
+                    <button type="submit">Adicionar ao carrinho</button>
+                </form>
             </div>
         </div>
     </section>

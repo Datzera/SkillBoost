@@ -75,7 +75,7 @@
                             total += preco;
                 %>
                             <div class="curso">
-                                <h3>Curso de <%= nomeCurso %></h3>
+                                <h3><%= nomeCurso %></h3>
                                 <p>Preço: R$ <%= String.format("%.2f", preco) %></p>
                             </div>
                 <%
@@ -89,7 +89,9 @@
                     <h3>Total: R$ <%= String.format("%.2f", total) %></h3>
                 </div>
 
-                <button class="finalizar">Finalizar Compra</button>
+                <form action="finalizarCompra.jsp" method="POST">
+                    <button type="submit" class="finalizar">Finalizar Compra</button>
+                </form>
                 <br class="espaço">
                 <hr id="linhazinha">
                 <br>
