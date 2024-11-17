@@ -1,37 +1,37 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkillBoost - Cursos Online</title>
+    <title>SkillBoost</title>
     <link rel="stylesheet" href="style.css">
-
-
 </head>
 
 <body>
 
+    <%
+        String alunoNome = (String) session.getAttribute("alunoNome");
+        String CPFCliente = (String) session.getAttribute("CPFCliente");
+    %>
+
     <header>
         <div class="logo">
             <a href="index.html"><img src="logo2.png" alt="SkillBoost Logo"></a>
-
             <h1>SkillBoost</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#courses">Cursos</a></li>
-                <li><a href="cadastroVendedor.html">Cadastre-se como <bold>Professor</bold></a></li>
-                <li><a href="cadastroAluno.html">Cadastre-se como Aluno</a></li>
             </ul>
         </nav>
 
-        <div class=" login">
-            <p>Seja bem-vindo Aluno</p>
-            <a href="carrinho.html">Seu Carrinho</a>
+        <div class="login">
+            <p>Seja bem-vindo, <%= alunoNome %>!</p>
+            <a href="carrinho.jsp?CPFCliente=<%= CPFCliente %>">Seu Carrinho</a>
         </div>
-
     </header>
 
     <section id="inicio" class="fds">

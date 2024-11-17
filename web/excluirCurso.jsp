@@ -14,14 +14,14 @@
     </head>
     <body>
         <%
-            String c;
+            String i;
             int status;
             Connection connec;
-            c = request.getParameter("codigo");
+            i = request.getParameter("idCursoExcluir");
             Class.forName("com.mysql.cj.jdbc.Driver");
             connec = DriverManager.getConnection("jdbc:mysql://localhost:3306/skillboost", "root", "");
-            PreparedStatement st = connec.prepareStatement("DELETE FROM produtos WHERE codigo=?");
-            st.setString(1, c);
+            PreparedStatement st = connec.prepareStatement("DELETE FROM cursos WHERE id_curso=?");
+            st.setString(1, i);
             status = st.executeUpdate(); //executa o delete
             if (status == 1){
                 out.print("deletado com sucesso");
@@ -30,5 +30,8 @@
                 out.print("codigo não encontrado");
             }
         %>
+        <p>
+            <a href="gerenciar.jsp">Voltar para o Painel do Vendedor</a>
+        </p>
     </body>
 </html>
