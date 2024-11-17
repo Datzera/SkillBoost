@@ -34,7 +34,7 @@
     %>
     
         <p>
-            <a href="../inicio/index.html">Logar</a>    
+            <a href="index.html">Logar</a>    
         </p>    
 
     </body>

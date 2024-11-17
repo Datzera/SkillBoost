@@ -1,4 +1,4 @@
-CREATE DATABASE skillboost;
+CREATE DATABASE IF NOT EXISTS skillboost;
 
 USE skillboost;
 
@@ -9,16 +9,17 @@ CREATE TABLE Clientes (
 );
 
 CREATE TABLE Vendedor (
-    codigo_vendedor INT PRIMARY KEY,
+    codigo_vendedor INT AUTO_INCREMENT PRIMARY KEY,
     cpf_vendedor CHAR(11) UNIQUE,
     nome VARCHAR(100) NOT NULL,
     senha VARCHAR(40) NOT NULL
 );
 
 CREATE TABLE Cursos (
-    id_curso INT PRIMARY KEY,
+    id_curso INT AUTO_INCREMENT PRIMARY KEY,
     nome_do_curso VARCHAR(100) NOT NULL,
     codigo_vendedor INT,
+    preco DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (codigo_vendedor) REFERENCES Vendedor(codigo_vendedor)
 );
 
@@ -30,34 +31,40 @@ CREATE TABLE Clientes_Cursos (
     FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso)
 );
 
+CREATE TABLE cursos_comprados (
+    cpf_cliente CHAR(11),
+    id_curso INT,
+    nome_do_curso VARCHAR(100),
+    PRIMARY KEY (cpf_cliente, id_curso),
+    FOREIGN KEY (cpf_cliente) REFERENCES Clientes(cpf_cliente),
+    FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso)
+);
 
--- inserts de exemplo
-USE skillboost;
-
-INSERT INTO Clientes (cpf_cliente, senha, nome) 
-VALUES
+-- dados
+INSERT INTO Clientes (cpf_cliente, senha, nome) VALUES
 ('12345678901', 'senha123', 'João Silva'),
-('23456789012', 'senha456', 'Maria Oliveira'),
-('34567890123', 'senha789', 'Carlos Pereira');
+('98765432100', 'senha456', 'Maria Oliveira'),
+('11223344556', 'senha789', 'Carlos Souza');
 
-INSERT INTO Vendedor (codigo_vendedor, cpf_vendedor, nome, senha) 
-VALUES 
-(1, '11122334455', 'Ana Costa', 'vendedor123'),
-(2, '22233445566', 'Felipe Almeida', 'vendedor456'),
-(3, '33344556677', 'Luana Souza', 'vendedor789');
+INSERT INTO Vendedor (cpf_vendedor, nome, senha) VALUES
+('11122334455', 'Fernando Costa', 'vendedor123'),
+('22334455667', 'Ana Pereira', 'vendedor456'),
+('33445566778', 'Rafael Martins', 'vendedor789');
 
-INSERT INTO Cursos (id_curso, nome_do_curso, codigo_vendedor) 
-VALUES 
-(1, 'Desenvolvimento Web', 1),
-(2, 'Python para Iniciantes', 2),
-(3, 'Banco de Dados com MySQL', 3),
-(4, 'JavaScript Avançado', 1);
+INSERT INTO Cursos (nome_do_curso, codigo_vendedor, preco) VALUES
+('Curso de Java', 1, 299.90),
+('Curso de Python', 2, 249.99),
+('Curso de React', 3, 349.50);
 
-INSERT INTO Clientes_Cursos (id_cliente, id_curso) 
-VALUES 
+INSERT INTO Clientes_Cursos (id_cliente, id_curso) VALUES
 ('12345678901', 1),
+('98765432100', 2),
+('11223344556', 3),
 ('12345678901', 2),
-('23456789012', 3),
-('34567890123', 4),
-('23456789012', 1),
-('34567890123', 2);
+('98765432100', 3);
+
+INSERT INTO cursos_comprados (cpf_cliente, id_curso, nome_do_curso)
+SELECT c.cpf_cliente, cu.id_curso, cu.nome_do_curso
+FROM Clientes c
+JOIN Clientes_Cursos cc ON c.cpf_cliente = cc.id_cliente
+JOIN Cursos cu ON cc.id_curso = cu.id_curso;
