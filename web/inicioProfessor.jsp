@@ -25,7 +25,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#inicio">InÌcio</a></li>
+                <li><a href="#inicio">In√≠cio</a></li>
                 <li><a href="#courses">Cursos</a></li>
             </ul>
         </nav>
@@ -47,13 +47,13 @@
         <h2>Cursos Populares</h2>
         <div class="listaCursos">
             <div class="curso1">
-                <h3>Curso de ProgramaÁ„o</h3>
+                <h3>Curso de Programa√ß√£o</h3>
                 <p>Aprenda a programar do zero com os melhores professores.</p>
                 <button>Saiba Mais</button>
             </div>
             <div class="curso1">
-                <h3>Curso de Design Gr·fico</h3>
-                <p>Domine ferramentas e tÈcnicas de design.</p>
+                <h3>Curso de Design Gr√°fico</h3>
+                <p>Domine ferramentas e t√©cnicas de design.</p>
                 <button>Saiba Mais</button>
             </div>
             <div class="curso1">
@@ -65,7 +65,7 @@
     </section>
 
     <footer>
-        <p>vou pensar em alguma coisa pra colocar</p>
+        <p>&copy; Skillboost. Site feito por Caio Abner e Davi Miguel</p>
     </footer>
 </body>
 
