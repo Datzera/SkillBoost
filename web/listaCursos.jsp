@@ -83,7 +83,7 @@
     </section>
 
     <footer>
-        <p>vou pensar em alguma coisa pra colocar</p>
+        <p>&copy; Skillboost. Site feito por Caio Abner e Davi Miguel</p>
     </footer>
 </body>
 
