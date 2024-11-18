@@ -309,8 +309,16 @@ footer {
 .conteudo table {
     background-size: 100% auto;
     color: rgb(255, 255, 255);
-    text-align: left;
-    background-color: #16a03d;
+    text-align: center;
+    background-color: #5aed83;
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 600px;
+    background-color: #445;
+    border-radius: 8px;
+    overflow: hidden;
+
 }
 
 .conteudo tr {
